@@ -1,4 +1,4 @@
-function [out_waveform, t, pulse] = linecode_gen(bit_sequence, code_name, data_rate, samp_freq)
+function [waveform, t, pulse] = linecode_gen(bit_sequence, code_name, data_rate, samp_freq)
 % ------------------------------------------------------------------------
 % This function genetares a waveform coded in binary signalling format.
 %
@@ -11,7 +11,7 @@ function [out_waveform, t, pulse] = linecode_gen(bit_sequence, code_name, data_r
 %      samp_freq: sampling frequency, if not specified default value is 10 KHz
 %
 %  Output
-%      out_waveform: line code waveform
+%      waveform: line code waveform
 %      t: time vector to plot the waveform
 %      pulse: basic pulse shape
 % ------------------------------------------------------------------------
@@ -93,7 +93,6 @@ end
 % Generate output signal waveform
 %---------------------------------------
 x  = (b_seq * basic_pulse)';
-time = time(:);
-out_waveform = x(:);
+waveform = x(:);
 if (nargout == 2), t = time; end
 if (nargout == 3), t = time; pulse=basic_pulse; end
