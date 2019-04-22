@@ -16,3 +16,4 @@ if(nargin == 4) theta = (phase/360)*2*pi; end
 t = [0:N-1]/fs;
 t_angle = 2*pi*t*fc + theta;
 carrier = cos(t_angle);
+
